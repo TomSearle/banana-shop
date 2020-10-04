@@ -37,13 +37,14 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
+    '@nuxtjs/apollo',
   ],
 
   // Vuetify module configuration (https://go.nuxtjs.dev/config-vuetify)
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {
-      dark: true,
+      dark: false,
       themes: {
         dark: {
           primary: colors.blue.darken2,
@@ -56,6 +57,27 @@ export default {
         },
       },
     },
+  },
+
+  apollo: {
+    clientConfigs: {
+      default: {
+        httpEndpoint: process.env.BACKEND_URL || 'https://graphql.umbraco.io',
+        httpLinkOptions: {
+          headers: {
+            'umb-project-alias': 'dev-toms-hc-talk',
+          },
+        },
+        inMemoryCacheOptions: {
+          addTypename: false,
+        },
+      },
+    },
+  },
+  env: {
+    storeUrl:
+      process.env.STORE_URL ||
+      'https://graphql.umbraco.io/?Umb-Project-Alias=dev-toms-hc-talk',
   },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
