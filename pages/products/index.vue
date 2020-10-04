@@ -1,13 +1,7 @@
 <template>
-  <v-row justify="center" align="center">
-    <v-col
-      v-for="product in allProduct.items"
-      :key="product.id"
-      cols="4"
-      sm="8"
-      md="6"
-    >
-      <product-card v-bind="product" />
+  <v-row>
+    <v-col v-for="product in allProduct.items" :key="product.id" cols="4">
+      <product-card v-bind="product"></product-card>
     </v-col>
   </v-row>
 </template>

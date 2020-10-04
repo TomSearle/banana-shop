@@ -1,37 +1,27 @@
 <template>
   <v-app>
-    <v-navigation-drawer
-      v-model="drawer"
-      :mini-variant="miniVariant"
-      :clipped="clipped"
-      fixed
-      app
-    >
-      <v-list>
-        <v-list-item
-          v-for="(item, i) in items"
-          :key="i"
-          :to="item.to"
-          router
-          exact
-        >
-          <v-list-item-action>
-            <v-icon>{{ item.icon }}</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title v-text="item.title" />
-          </v-list-item-content>
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer>
-    <v-app-bar :clipped-left="clipped" fixed app>
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
+    <v-app-bar flat app>
+      <v-btn to="/" text><h1>🍌</h1></v-btn>
+      <v-spacer></v-spacer>
+      <v-btn icon class="snipcart-checkout">
+        <v-badge :value="14.99" bottom left overlap>
+          <template slot="badge"
+            ><span class="snipcart-total-price"></span
+          ></template>
+          <v-icon>mdi-cart</v-icon>
+        </v-badge>
+      </v-btn>
     </v-app-bar>
     <v-main>
-      <v-container>
+      <v-container fluid>
         <nuxt />
       </v-container>
     </v-main>
+    <div
+      id="snipcart"
+      data-api-key="YzZiMzI4MDQtNGZlMi00Y2Y5LTlhMGMtNzgzYjljY2UyNzBmNjM3Mzc0MDc2MjU2NDI0NDYx"
+      hidden
+    ></div>
   </v-app>
 </template>
 

@@ -1,18 +1,23 @@
 <template>
-  <v-row justify="center" align="center">
-    <v-col cols="4" sm="8" md="6">
-      <h1>hi</h1>
-    </v-col>
-  </v-row>
+  <div>
+    <v-btn class="mb-4" to="/products" text>Back to products</v-btn>
+
+    <product-description v-if="product" v-bind="product"></product-description>
+  </div>
 </template>
 
 <script>
 import productQuery from '~/apollo/queries/product/product'
 
+import ProductDescription from '~/components/ProductDescription'
+
 export default {
+  components: {
+    ProductDescription,
+  },
   data() {
     return {
-      product: {},
+      product: null,
     }
   },
   apollo: {
@@ -20,7 +25,7 @@ export default {
       prefetch: true,
       query: productQuery,
       variables() {
-        return { url: `/catalog/${this.$route.params.slug}/` }
+        return { url: `/products/${this.$route.params.slug}/` }
       },
     },
   },
