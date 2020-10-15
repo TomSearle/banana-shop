@@ -1,6 +1,6 @@
 # banana-shop
 
-An example website demonstrating how you can consume content from Umbraco Heartcore using GraphQL and Nuxt.
+An example website demonstrating how you can combine Umbraco Heartcore, Nuxt and Snipcart to create a snazzy eCommerce store.
 
 ## Build Setup
 
@@ -40,6 +40,8 @@ Add the following to nuxt.config. Replace 'dev-toms-hc-talk' with your environme
   },
   ...
 ```
+
+## Snipcart
 
 ## Issues
 
