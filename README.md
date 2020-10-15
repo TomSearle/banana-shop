@@ -1,3 +1,5 @@
+[Demo Site](https://frosty-benz-573425.netlify.app)
+
 # banana-shop
 
 An example website demonstrating how you can combine Umbraco Heartcore, Nuxt and Snipcart to create a snazzy eCommerce store.
