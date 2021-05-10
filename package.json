@@ -15,7 +15,7 @@
     "@nuxtjs/pwa": "^3.2.2",
     "core-js": "^3.6.5",
     "graphql": "^15.3.0",
-    "nuxt": "^2.14.7"
+    "nuxt": "^2.15.5"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^4.0.0",
